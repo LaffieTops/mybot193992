@@ -238,4 +238,20 @@ async def start_sending(phone, msg):
         await client.disconnect()
 
 if __name__ == "__main__":
+from flask import Flask
+import threading
+
+# Минималистичный веб-сервер для Render
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Бот работает!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
+# Запуск Flask-сервера в отдельном потоке
+threading.Thread(target=run_flask).start()    
     executor.start_polling(dp, skip_updates=True)
