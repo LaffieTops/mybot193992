@@ -2,7 +2,9 @@ import asyncio
 import logging
 import random
 import os
+import threading
 
+from flask import Flask
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils import executor
@@ -238,8 +240,7 @@ async def start_sending(phone, msg):
         await client.disconnect()
 
 if __name__ == "__main__":
-from flask import Flask
-import threading
+
 
 # Минималистичный веб-сервер для Render
 app = Flask(__name__)
