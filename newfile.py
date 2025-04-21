@@ -2,9 +2,7 @@ import asyncio
 import logging
 import random
 import os
-import threading
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils import executor
@@ -18,17 +16,6 @@ from telethon.errors import SessionPasswordNeededError
 
 from tinydb import TinyDB, Query
 
-class Handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b'Userbot is alive')
-
-def keep_alive():
-    server = HTTPServer(('0.0.0.0', 8080), Handler)
-    server.serve_forever()
-
-threading.Thread(target=keep_alive).start()
 # Настройки
 API_TOKEN = '7744788611:AAGe2lmUsrA0U2eD4w0LU24jx6KnR0R6mfQ'
 db = TinyDB("db.json")
