@@ -31,7 +31,7 @@ def keep_alive():
 threading.Thread(target=keep_alive).start()
 
 # Настройки
-API_TOKEN = '7744788611:AAGe2lmUsrA0U2eD4w0LU24jx6KnR0R6mfQ'
+API_TOKEN = '7877916971:AAGvM3yUREk55EwA2nrq9WItHUjbWubrsGE'
 WEBHOOK_HOST = "https://mybot193992-tof6.onrender.com"  # Замените на свой домен или URL (например, https://your-project-name.onrender.com)
 WEBHOOK_PATH = "/webhook/"  # Путь для вебхука
 WEBHOOK_URL = WEBHOOK_HOST + WEBHOOK_PATH
