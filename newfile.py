@@ -252,5 +252,10 @@ def run_flask():
     app.run(host="0.0.0.0", port=port)
 
 # Запуск Flask-сервера в отдельном потоке
-threading.Thread(target=run_flask).start()    
+threading.Thread(target=run_flask).start()
+
+if __name__ == "__main__":
+    
+    threading.Thread(target=run_flask).start()
     executor.start_polling(dp, skip_updates=True)
+    
