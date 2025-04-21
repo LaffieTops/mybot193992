@@ -240,8 +240,6 @@ async def start_sending(phone, msg):
         await client.disconnect()
 
 if __name__ == "__main__":
-
-
 # Минималистичный веб-сервер для Render
     app = Flask(__name__)
 
